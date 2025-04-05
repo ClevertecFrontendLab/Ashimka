@@ -20,6 +20,19 @@ const theme = extendTheme({
         heading: 'Inter, sans-serif',
         body: 'Inter, sans-serif',
     },
+    colors: {
+        lime: {
+            50: '#FFFFD3',
+            100: '#eaffc7',
+            150: '#d7ff94',
+            300: '#c4ff61',
+            600: 'rgba(45, 177, 0, 1)',
+        },
+        blackAlpha: {
+            400: 'rgba(0, 0, 0, 0.24)',
+            700: 'rgba(0, 0, 0, 0.64)',
+        },
+    },
 });
 
 createRoot(document.getElementById('root')!).render(

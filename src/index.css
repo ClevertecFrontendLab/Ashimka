@@ -19,3 +19,10 @@ body {
     margin: 0;
     padding: 0;
 }
+a {
+    text-decoration: none;
+}
+.active {
+    font-weight: 600;
+    background: #eaffc7;
+}
