@@ -166,7 +166,7 @@ export const menu = [
     },
     {
         id: 10,
-        name: 'Национальные блюда',
+        name: 'Национальные',
         icon: National,
         link: '/national-cuisine',
         products: [
@@ -217,7 +217,7 @@ export const menu = [
     },
     {
         id: 13,
-        name: 'Домашние заготовки',
+        name: 'Заготовки',
         icon: Preserves,
         link: '/preserves',
         products: [

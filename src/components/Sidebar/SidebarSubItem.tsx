@@ -1,4 +1,5 @@
 import { Box, Text } from '@chakra-ui/react';
+import { useNavigate } from 'react-router';
 
 import { ISubItemCategory } from './SidebarItem';
 
@@ -13,11 +14,20 @@ export function SidebarSubItem({
     activeSubItem,
     setActiveSubItem,
 }: ISidebarSubItemsProps) {
+    const navigate = useNavigate();
+
+    const clickNavItem = (link: string) => {
+        if (link !== 'juiciest') {
+            return navigate('juiciest');
+        }
+    };
     return (
         <Box
             key={subItem.id}
             padding='6px 8px'
-            onClick={() => setActiveSubItem(subItem.name)}
+            onClick={() => {
+                setActiveSubItem(subItem.name), clickNavItem(subItem.link);
+            }}
             cursor='pointer'
             _hover={{ bgColor: 'lime.50' }}
         >

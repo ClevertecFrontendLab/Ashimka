@@ -7,6 +7,7 @@ import {
     Image,
     Text,
 } from '@chakra-ui/react';
+import { useNavigate } from 'react-router';
 
 import { SidebarSubItem } from './SidebarSubItem';
 
@@ -38,12 +39,22 @@ export function SidebarItem({
     activeSubItem,
     setActiveSubItem,
 }: ISidebarItemProps) {
+    const navigate = useNavigate();
+
+    const clickNavItem = (link: string) => {
+        if (link !== 'vegan-cuisine') {
+            return navigate('vegan-cuisine');
+        }
+
+        navigate(link);
+    };
     return (
         <AccordionItem key={item.name} onClick={() => setActiveItem(item.name)} border='none'>
             <AccordionButton
+                onClick={() => clickNavItem(item.link)}
                 p='12px 8px'
-                bgColor={activeItem === item.name ? 'lime.100' : 'white'}
                 cursor='pointer'
+                _expanded={{ bg: 'lime.100' }}
                 _hover={{ bgColor: 'lime.50' }}
             >
                 <Image src={item.icon} />
